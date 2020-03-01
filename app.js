@@ -108,8 +108,8 @@ app.post("/addApplicant", function(req, res){
         role: data.role, 
         previousCompany: data.previousCompany,
         yearsExperience: data.yearsExperience,
-        profilePicture: pictureFile,
-        resume: resumeFile,
+        profilePicture: pictureFile.name,
+        resume: resumeFile.name,
         starred: data.starred
     }, function(error, data){
         if(error){
@@ -143,8 +143,16 @@ app.get("/list", function(req,res){
 //individual applicant
 app.get("/list/:applicantID", function(req,res){
     var applicantid = req.params.applicantID;
-    res.render("applicant", {
-        id: applicantid
+    Applicant.findById(applicantid, function(error, data){
+        if(error){
+            console.log(error);
+        }else{
+            res.render("applicant", {
+                firstName: data.firstName,
+                lastName: data.lastName,
+                resume: data.resume
+            });
+        }
     });
 });
 
