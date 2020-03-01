@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Recruiting App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/site.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div class="">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="jumbotron center-text">
+                    <img class="fit-image profile-picture" src="../img/<%=profilePicture%>" alt="rubbish">
+                    <div class="row">
+                        <div class="col">
+                            <h1><%=firstName + " " + lastName%> <% if( locals.starred == true) { %> <i class="fa fa-star"></i> <% } %> </h1> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><span>Email: </span><span class="text-primary"><%=email%></span></h3>
+                        </div>
+                        <div class="col">
+                            <h3><span>Phone Number: </span><span class="text-primary"><%=phone%></span></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><span>Applying For: </span><span class="text-primary"><%=role%></span></h3>
+                        </div>
+                        <div class="col">
+                            <h3><span>Desired Location: </span><span class="text-primary"><%=location%></span></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><span>Previous Company: </span><span class="text-primary"><%=previousCompany%></span></h3>
+                        </div>
+                        <div class="col">
+                            <h3><span>Total years experience: </span><span class="text-primary"><%=yearsExperience%></span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <img class="fit-image" src="../resumes/<%=resume%>" alt="Marilyn stole this image">
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

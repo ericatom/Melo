@@ -1,0 +1,60 @@
+.vertical-center {
+    min-height: 100%;
+    min-width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-padding {
+    margin-top: 15%;
+}
+
+.top-space {
+    margin-top: 2%;
+}
+
+.left-space {
+    margin-left: 2%;
+}
+
+.bottom-space {
+    margin-bottom: 10%;
+}
+
+.white{
+    background-color: white;
+}
+
+.custom-background {
+    background-image: url('/img/background2.jpg');
+    background-size: 100% auto;
+}
+
+.btn:hover {
+    background-color: RoyalBlue;
+  }
+
+.card-image {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-picture {
+    height: 15vw;
+    width: auto;
+}
+
+.center-text {
+    align-items: center;
+    text-align: center;
+}
+
+
+
