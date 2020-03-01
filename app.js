@@ -181,6 +181,7 @@ app.get("/list/:applicantID", function(req,res){
                 location: data.location,
                 previousCompany: data.previousCompany,
                 yearsExperience: data.yearsExperience,
+                starred: data.starred,
                 profilePicture: data.profilePicture,
                 resume: data.resume
             });

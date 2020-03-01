@@ -64,7 +64,8 @@
                         <input type="file" class="custom-file-input" id="resume" name="resume">
                         <label class="custom-file-label" for="resume">Add Resume</label>
                     </div>
-                    <button type="button" class="btn btn-default btn-lg left-space btn-outline-dark" data-toggle="button" aria-pressed="false" autocomplete="off" id="starred" name="starred" value="true">
+                    <button type="button" class="btn btn-default btn-lg left-space btn-outline-dark" data-toggle="button" aria-pressed="false" autocomplete="off" id="starbutton" name="starbutton">
+                        <input type="hidden" id="starred" name="starred" value="false">
                         <i class="fa fa-star"></i>
                     </button>
                 </div>
@@ -78,5 +79,11 @@
     </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    
+    <script>
+        $('#starbutton').click(function(e) {
+            e.preventDefault();
+            $(this).addClass('active');
+            $('#starred').val("true");
+        })
+    </script>
 </html>
