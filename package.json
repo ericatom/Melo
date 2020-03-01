@@ -2,6 +2,9 @@
   "name": "melo",
   "version": "1.0.0",
   "description": "hiring application",
+  "engines": {
+    "node": "12.16.1"
+  },
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
