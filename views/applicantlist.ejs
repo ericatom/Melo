@@ -6,24 +6,22 @@
         <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
-        <div class="text-center">
+        <div class="text-center container top-space">
             <h1>List of Applicants</h1>
-            <div class="container">
+            <div class="container jumbotron">
                 <form action="/filteredlist" method="POST" enctype="multipart/form-data">
-                    <div class="form-row">
-                        <div class="col-sm">
-                            <label for="filterRole">Role</label>
+                    <div class="form-row align-items-center">
+                        <div class="col-sm-4">
                             <select class="form-control" id="filterRole" name="filterRole">
-                                <option>All</option>
+                                <option>Role</option>
                                 <option>Software Developer</option>
                                 <option>Scrum Master</option>
                                 <option>Product Owner</option>
                             </select>
                         </div>
-                        <div class="col-sm">
-                            <label for="filterLocation">Location</label>
+                        <div class="col-sm-4">
                             <select class="form-control" id="filterLocation" name="filterLocation">
-                                <option>All</option>
+                                <option>Location</option>
                                 <option>San Francisco</option>
                                 <option>Sacramento</option>
                                 <option>San Diego</option>
@@ -31,7 +29,7 @@
                                 <option>Denver</option>
                             </select>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="filterStarred" name="filterStarred" value="true"> 
                                 <label class="form-check-label" for="gridCheck">
@@ -39,17 +37,16 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-info">Search</button>
                     </div>
                 </form>
             </div>
-
             <div class="container">
                 <div class="row">
                     <% for(var i = 0;i < applicantList.length; i++){ %>
                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="img/<%=applicantList[i].profilePicture%>" alt="Card image cap">
+                        <div class="card bottom-space" style="width: 18rem;">
+                            <img class="card-img-top card-image" src="img/<%=applicantList[i].profilePicture%>" alt="Card image cap">
                             <div class="card-body">
                             <h5 class="card-title"><%= applicantList[i].firstName + " " + applicantList[i].lastName%></h5>
                             <a href="/list/<%= applicantList[i].id %>" class="btn btn-primary">View</a>

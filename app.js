@@ -143,11 +143,11 @@ app.get("/list", function(req,res){
 app.post("/filteredlist", function(req, res){
     var data = req.body;
     var query = {};
-    
-    if(data.filterRole != "All"){
+
+    if(data.filterRole != "Role"){
         query.role = data.filterRole;
     }
-    if(data.filterLocation != "All"){
+    if(data.filterLocation != "Location"){
         query.location = data.filterLocation;
     }
     if(data.filterStarred == 'true'){
@@ -175,6 +175,13 @@ app.get("/list/:applicantID", function(req,res){
             res.render("applicant", {
                 firstName: data.firstName,
                 lastName: data.lastName,
+                email: data.email,
+                phone: data.phone,
+                role: data.role,
+                location: data.location,
+                previousCompany: data.previousCompany,
+                yearsExperience: data.yearsExperience,
+                profilePicture: data.profilePicture,
                 resume: data.resume
             });
         }
