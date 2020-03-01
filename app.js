@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 3000
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -194,4 +195,4 @@ app.get("*", function(req, res){
     res.send("Route doesn't exist.")
 });
 
-app.listen(3000, () => console.log("App is running.."));
+app.listen(PORT, () => console.log("App is running.."));
