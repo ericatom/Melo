@@ -3,8 +3,31 @@
     min-width: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.pink{
-    background-color: aqua;
+.top-padding {
+    margin-top: 15%;
 }
+
+.top-space {
+    margin-top: 2%;
+}
+
+.left-space {
+    margin-left: 2%;
+}
+
+.white{
+    background-color: white;
+}
+
+.custom-background {
+    background-image: url('/img/background2.jpg');
+    background-size: 100% auto;
+}
+
+.btn:hover {
+    background-color: RoyalBlue;
+  }
+
