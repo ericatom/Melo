@@ -140,6 +140,31 @@ app.get("/list", function(req,res){
     });   
 });
 
+app.post("/filteredlist", function(req, res){
+    var data = req.body;
+    var query = {};
+    
+    if(data.filterRole != "All"){
+        query.role = data.filterRole;
+    }
+    if(data.filterLocation != "All"){
+        query.location = data.filterLocation;
+    }
+    if(data.filterStarred == 'true'){
+        query.starred = true;
+    }
+    
+    Applicant.find(query, function(error, applicants){
+        if(error){
+            console.log(error);
+        }else{
+            res.render("applicantlist", {
+                applicantList: applicants
+            });
+        }
+    });
+})
+
 //individual applicant
 app.get("/list/:applicantID", function(req,res){
     var applicantid = req.params.applicantID;
